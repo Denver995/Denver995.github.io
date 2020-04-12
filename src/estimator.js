@@ -30,6 +30,26 @@ const covid19ImpactEstimator = (data) => {
 	//estimation of infectionsByRequestedTime
 	impact.infectionsByRequestedTime = infectionsByRequestedTimeFunction(data.periodType, impact.currentlyInfected, data.timeToElapse);
 	severeImpact.infectionsByRequestedTime = infectionsByRequestedTimeFunction(data.periodType, severeImpact.currentlyInfected, data.timeToElapse);
+
+	//---------------starting challenge 2
+	//estimation of severeCasesByRequestedTime
+	impact.severeCasesByRequestedTime = Math.trunc(impact.infectionsByRequestedTime * 0.15);
+	severeImpact.severeCasesByRequestedTime = Math.trunc(severeImpact.infectionsByRequestedTime * 0.15);
+
+	//estimation of hospitalBedsByRequestedTime
+	impact.hospitalBedsByRequestedTime = Math.trunc(( data.totalHospitalBeds * 0.35 ) - impact.severeCasesByRequestedTime);
+	severeImpact.hospitalBedsByRequestedTime = Math.trunc(( data.totalHospitalBeds * 0.35 ) - severeImpact.severeCasesByRequestedTime);
+
+	//---------------starting challenge 3
+	impact.casesForICUByRequestedTime = Math.trunc(impact.infectionsByRequestedTime * 0.05);
+	severeImpact.casesForICUByRequestedTime = Math.trunc(severeImpact.infectionsByRequestedTime * 0.05);
+
+	impact.casesForVentilatorsByRequestedTime = Math.trunc(impact.infectionsByRequestedTime * 0.05);
+	severeImpact.casesForVentilatorsByRequestedTime = Math.trunc(severeImpact.infectionsByRequestedTime * 0.05);
+
+	impact.dollarsInFlight = dollarsInFlightFunction(impact.avgDailyIncomeInUSD, data.region.avgDailyIncomePopulation, data.infectionsByRequestedTime, data.periodType, data.period);
+	severeImpact.dollarsInFlight = dollarsInFlightFunction(severeImpact.avgDailyIncomeInUSD, data.region.avgDailyIncomePopulation, data.infectionsByRequestedTime, data.periodType, data.period);
+
 };
 
 export default covid19ImpactEstimator;
