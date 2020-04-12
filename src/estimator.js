@@ -16,8 +16,29 @@ const infectionsByRequestedTimeFunction = (periodType, currentlyInfected, timeTo
 			time = 0;
 			break;
 	}
-
 	result = Math.trunc(currentlyInfected * time);
+	return result;
+};
+
+const dollarsInFlightFunction = (avgDailyIncomeInUSD, avgDailyIncomePopulation, infectionsByRequestedTime, periodType, period) => {
+	let time = 0;
+	let result = 0;
+	switch (periodType) {
+		case "days":
+			time = period; 
+			break;
+		case "weeks":
+			time = period * 7; 
+			break;
+		case "months":
+			time = period * 30; 
+			break;
+		default:
+			time = 0;
+			break;
+	}
+
+	result = Math.trunc((currentlyInfected * (avgDailyIncomeInUSD/100) * (avgDailyIncomePopulation/100)) / time);
 	return result;
 };
 
@@ -25,7 +46,7 @@ const covid19ImpactEstimator = (data) => {
 	const input = data;
 	const impact = {};
 	const severeImpact = {};
-	//---------------starting challenge 1
+	//starting challenge 1
 	//estimation of currentlyInfected
 	impact.currentlyInfected = Math.trunc(input.reportedCases * 10);
 	severeImpact.currentlyInfected = Math.trunc(input.reportedCases * 50);
@@ -34,7 +55,7 @@ const covid19ImpactEstimator = (data) => {
 	impact.infectionsByRequestedTime = infectionsByRequestedTimeFunction(input.periodType, impact.currentlyInfected, input.timeToElapse);
 	severeImpact.infectionsByRequestedTime = infectionsByRequestedTimeFunction(input.periodType, severeImpact.currentlyInfected, input.timeToElapse);
 
-	//---------------starting challenge 2
+	//starting challenge 2
 	//estimation of severeCasesByRequestedTime
 	impact.severeCasesByRequestedTime = Math.trunc(impact.infectionsByRequestedTime * 0.15);
 	severeImpact.severeCasesByRequestedTime = Math.trunc(severeImpact.infectionsByRequestedTime * 0.15);
@@ -43,7 +64,7 @@ const covid19ImpactEstimator = (data) => {
 	impact.hospitalBedsByRequestedTime = Math.trunc(( input.totalHospitalBeds * 0.35 ) - impact.severeCasesByRequestedTime);
 	severeImpact.hospitalBedsByRequestedTime = Math.trunc(( input.totalHospitalBeds * 0.35 ) - severeImpact.severeCasesByRequestedTime);
 
-	//---------------starting challenge 3
+	//starting challenge 3
 	impact.casesForICUByRequestedTime = Math.trunc(impact.infectionsByRequestedTime * 0.05);
 	severeImpact.casesForICUByRequestedTime = Math.trunc(severeImpact.infectionsByRequestedTime * 0.05);
 
