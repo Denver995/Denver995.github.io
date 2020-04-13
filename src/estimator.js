@@ -26,13 +26,13 @@ const dollarsInFlight = (dailyIncome, population, infected, periodType, period) 
   let result = 0;
   switch (periodType) {
     case 'days':
-      time = period;
+      time = Math.trunc(period);
       break;
     case 'weeks':
-      time = period * 7;
+      time = Math.trunc(period * 7);
       break;
     case 'months':
-      time = period * 30;
+      time = Math.trunc(period * 30);
       break;
     default:
       time = 0;
@@ -41,8 +41,7 @@ const dollarsInFlight = (dailyIncome, population, infected, periodType, period) 
 
   const avgDailyIncome = dailyIncome / 100;
   const avgDailyIncomeP = population / 100;
-  const x = 2 ** time;
-  result = Math.trunc((infected * avgDailyIncome * avgDailyIncomeP) / x);
+  result = Math.trunc((infected * dailyIncome * population) / time);
   return result;
 };
 
