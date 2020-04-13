@@ -1,5 +1,5 @@
 // funtion that estimate the infection By RequestedTime
-const infectionsByRequestedTime = (periodType, currentlyInfected, timeToElapse) => {
+const infections = (periodType, currentlyInfected, timeToElapse) => {
   let time = 0;
   let result = 0;
   switch (periodType) {
@@ -60,9 +60,9 @@ const covid19ImpactEstimator = (data) => {
   const time = timeToElapse;
   const avgDailyIncomeP = input.region.avgDailyIncomePopulation;
   const avgUsd = input.region.avgDailyIncomeInUSD;
-  const infectionI = infectionsByRequestedTime(data.periodType, ici, data.timeToElapse);
+  const infectionI = infections(data.periodType, ici, data.timeToElapse);
   impact.infectionsByRequestedTime = infectionI;
-  const infectionS = infectionsByRequestedTime(data.periodType, sci, data.timeToElapse);
+  const infectionS = infections(data.periodType, sci, data.timeToElapse);
   severeImpact.infectionsByRequestedTime = infectionS;
 
   // starting challenge 2
