@@ -1,16 +1,16 @@
 // funtion that estimate the infection By RequestedTime
 const infectionsByRequestedTime = (periodType, currentlyInfected, timeToElapse) => {
   let time = 0;
-	let result = 0;
-	switch (periodType) {
-		case "days":
-			time = Math.trunc(timeToElapse / 3); 
-			break;
-		case "weeks":
-			time = Math.trunc((timeToElapse * 7) / 3); 
-			break;
-		case "months":
-			time = Math.trunc((timeToElapse * 30) / 3); 
+  let result = 0;
+  switch (periodType) {
+	  case "days":
+		  time = Math.trunc(timeToElapse / 3);
+		  break;
+	  case "weeks":
+		  time = Math.trunc((timeToElapse * 7) / 3);
+		  break;
+	  case "months":
+			time = Math.trunc((timeToElapse * 30) / 3);
 			break;
 		default:
 			time = 0;
