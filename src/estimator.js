@@ -4,13 +4,13 @@ const infectionsByRequestedTime = (periodType, currentlyInfected, timeToElapse) 
   let result = 0;
   switch (periodType) {
     case 'days':
-      time = Math.trunc(timeToElapse | 3);
+      time = Math.trunc(timeToElapse / 3);
       break;
     case 'weeks':
-      time = Math.trunc((timeToElapse * 7) | 3);
+      time = Math.trunc((timeToElapse * 7) / 3);
       break;
     case 'months':
-      time = Math.trunc((timeToElapse * 30) | 3);
+      time = Math.trunc((timeToElapse * 30) / 3);
       break;
     default:
       time = 0;
