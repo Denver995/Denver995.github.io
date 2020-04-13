@@ -3,13 +3,13 @@ const infectionsByRequestedTime = (periodType, currentlyInfected, timeToElapse) 
   let time = 0;
   let result = 0;
   switch (periodType) {
-    case "days":
+    case 'days':
       time = Math.trunc(timeToElapse / 3);
       break;
-    case "weeks":
+    case 'weeks':
       time = Math.trunc((timeToElapse * 7) / 3);
       break;
-    case "months":
+    case 'months':
       time = Math.trunc((timeToElapse * 30) / 3);
       break;
     default:
@@ -24,14 +24,14 @@ const dollarsInFlight = (dailyIncome, population, infected, periodType, period) 
   let time = 0;
   let result = 0;
   switch (periodType) {
-    case "days":
-      time = period; 
+    case 'days':
+      time = period;
       break;
-    case "weeks":
-      time = period * 7; 
+    case 'weeks':
+      time = period * 7;
       break;
-    case "months":
-      time = period * 30; 
+    case 'months':
+      time = period * 30;
       break;
     default:
       time = 0;
@@ -67,15 +67,15 @@ const covid19ImpactEstimator = (data) => {
 
   // starting challenge 2
   // estimation of severeCasesByRequestedTime
-  const scbrtI =  Math.trunc(infectionI * 0.15);
+  const scbrtI = Math.trunc(infectionI * 0.15);
   impact.severeCasesByRequestedTime = scbrtI;
   const scbrtS = Math.trunc(infectionS * 0.15);
   severeImpact.severeCasesByRequestedTime = scbrtS;
 
   // estimation of hospitalBedsByRequestedTime
-  const bedI = Math.trunc(( input.totalHospitalBeds * 0.35 ) - scbrtI);
+  const bedI = Math.trunc((input.totalHospitalBeds * 0.35) - scbrtI);
   impact.hospitalBedsByRequestedTime = bedI;
-  const bedS = Math.trunc(( input.totalHospitalBeds * 0.35 ) - scbrtS);
+  const bedS = Math.trunc((input.totalHospitalBeds * 0.35) - scbrtS);
   severeImpact.hospitalBedsByRequestedTime = bedS;
 
   // starting challenge 3
@@ -88,7 +88,7 @@ const covid19ImpactEstimator = (data) => {
   severeImpact.casesForVentilatorsByRequestedTime = caseS;
 
   impact.dollarsInFlight = dollarsInFlight(avgUsd, avgDailyIncomeP, infectionI, periodType, time);
-  const  dollarsInFlightS = dollarsInFlight(avgUsd, avgDailyIncomeP, infectionS, periodType, time);
+  const dollarsInFlightS = dollarsInFlight(avgUsd, avgDailyIncomeP, infectionS, periodType, time);
   severeImpact.dollarsInFlight = dollarsInFlightS;
 
   return {
@@ -96,7 +96,6 @@ const covid19ImpactEstimator = (data) => {
     impact,
     severeImpact
   };
-
 };
 
 export default covid19ImpactEstimator;
