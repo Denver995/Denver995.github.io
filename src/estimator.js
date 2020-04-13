@@ -4,13 +4,13 @@ const infectionsByRequestedTime = (periodType, currentlyInfected, timeToElapse) 
   let result = 0;
   switch (periodType) {
     case 'days':
-      time = Math.trunc(timeToElapse / 3);
+      time = Math.trunc(timeToElapse | 3);
       break;
     case 'weeks':
-      time = Math.trunc((timeToElapse * 7) / 3);
+      time = Math.trunc((timeToElapse * 7) | 3);
       break;
     case 'months':
-      time = Math.trunc((timeToElapse * 30) / 3);
+      time = Math.trunc((timeToElapse * 30) | 3);
       break;
     default:
       time = 0;
@@ -60,9 +60,9 @@ const covid19ImpactEstimator = (data) => {
   const time = timeToElapse;
   const avgDailyIncomeP = input.region.avgDailyIncomePopulation;
   const avgUsd = input.region.avgDailyIncomeInUSD;
-  const infectionI = infectionsByRequestedTime(periodType, ici, time);
+  const infectionI = infectionsByRequestedTime(data.periodType, ici, data.timeToElapse);
   impact.infectionsByRequestedTime = infectionI;
-  const infectionS = infectionsByRequestedTime(periodType, sci, time);
+  const infectionS = infectionsByRequestedTime(data.periodType, sci, data.timeToElapse);
   severeImpact.infectionsByRequestedTime = infectionS;
 
   // starting challenge 2
