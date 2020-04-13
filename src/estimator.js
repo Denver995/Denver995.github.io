@@ -39,8 +39,8 @@ const dollarsInFlight = (dailyIncome, population, infected, periodType, period) 
       break;
   }
 
-  const avgDailyIncome = dailyIncome / 100;
-  const avgDailyIncomeP = population / 100;
+  // const avgDailyIncome = dailyIncome / 100;
+  // const avgDailyIncomeP = population / 100;
   result = Math.trunc((infected * dailyIncome * population) / time);
   return result;
 };
