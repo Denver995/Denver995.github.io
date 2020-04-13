@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>covid-19-estimator</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style type="text/css">
+      .jumbotron {
+        color: #533; 
+        background-color: #9bb 
+      }
+    </style>
+</head>
+<body>
+    <div class="pos-f-t">
+      <div class="collapse" id="navbarToggleExternalContent">
+        <div class="bg-dark p-4">
+          <h5 class="text-white h4">Covid-19 estimator</h5>
+          <span class="text-muted">Covid-19 estimator brand.</span>
+        </div>
+      </div>
+      <nav class="navbar navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </nav>
+    </div>
+    <main>
+        <section>
+            <div class="jumbotron text-center">
+                <h1>Hello</h1>
+                <p>Welcome to the covid-19 estimator app</p>
+                <p><a href="#" class="btn btn-info btn-lg" role="button">Learn more</a></p>
+            </div>
+            <div class="row container">
+                <div class="col-md-3 col-sm-12"></div>
+                <form class="col-md-6 col-sm-12">
+                    <div class="form-row">
+                        <div class="form-group col-6">
+                            <label for="population">Population:</label>
+                            <input type="number" min="1" class="form-control" placeholder="" id="population" data-population required>
+                        </div>
+                        <div class="form-group col-6">
+                            <label for="data-reported-cases">Reported case:</label>
+                            <input type="number" min="1" class="form-control" placeholder="" id="data-reported-cases" data-reported-cases required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="data-total-hospital-beds">Total hospital bed:</label>
+                        <input type="" class="form-control" placeholder="" id="data-total-hospital-beds" data-total-hospital-beds required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="timeToelapse">Time to elapse</label>
+                            <input type="number" class="form-control" min="1" id="timeToelapse" data-time-to-elapse required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="periodtype">Period type</label>
+                            <select id="periodtype" class="form-control" data-period-type required>
+                                <option selected>Pariod type</option>
+                                <option>days</option>
+                                <option>weeks</option>
+                                <option>months</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary float-right" role="button" data-go-estimate>Estimate</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="page-footer font-small bg-secondary mt-2">
+      <!-- Copyright -->
+      <div class="footer-copyright text-center py-3">© 2020 Copyright
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
