@@ -56,7 +56,7 @@ const covid19ImpactEstimator = (data) => {
   severeImpact.currentlyInfected = sci;
 
   // estimation of infectionsByRequestedTime
-  const {periodType, timeToElapse} = data;
+  const { periodType, timeToElapse } = data;
   const time = timeToElapse;
   const avgDailyIncomeP = input.region.avgDailyIncomePopulation;
   const avgUsd = input.region.avgDailyIncomeInUSD;
