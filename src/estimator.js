@@ -1,6 +1,6 @@
 // funtion that estimate the infection By RequestedTime
 const infectionsByRequestedTime = (periodType, currentlyInfected, timeToElapse) => {
-	let time = 0;
+  let time = 0;
 	let result = 0;
 	switch (periodType) {
 		case "days":
