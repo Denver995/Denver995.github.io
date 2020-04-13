@@ -16,7 +16,8 @@ const infections = (periodType, currentlyInfected, timeToElapse) => {
       time = 0;
       break;
   }
-  result = Math.trunc(currentlyInfected * time);
+  const x = Math.pow(2, time);
+  result = Math.trunc(currentlyInfected * x);
   return result;
 };
 
