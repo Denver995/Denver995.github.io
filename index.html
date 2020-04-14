@@ -5,7 +5,7 @@
   <meta name="description" content="Covid-19 challeng" />
   <meta name="author" content="Denver claude (SMART CODE)" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
+    <style>
     * {
       box-sizing: border-box;
     }
@@ -101,6 +101,33 @@
       .col-11 {width: 91.66%;}
       .col-12 {width: 100%;}
     }
+    
+    /* Style inputs */
+  input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Style the submit button */
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Add a background color to the submit button on mouse-over */
+input[type=submit]:hover {
+  background-color: #45a049;
   </style>
 </head>
 <body>
@@ -121,30 +148,29 @@
 
     <div class="col-6 col-s-9">
       <h1>Fill the form bellow</h1>
-      <div class="col-3 col-s-12"></div>
-      <form class="col-6 col-s-12">
-        <div class="form-row">
-          <div class="form-group col-6">
+      <form class="">
+        <div class="row">
+          <div class="col-6">
             <label for="population">Population:</label>
-            <input type="number" min="1" class="form-control" placeholder="" id="population" data-population required>
+            <input type="number" min="1" class="" placeholder="" id="population" data-population required>
           </div>
-          <div class="form-group col-6">
+          <div class="col-6">
             <label for="data-reported-cases">Reported case:</label>
-            <input type="number" min="1" class="form-control" placeholder="" id="data-reported-cases" data-reported-cases required>
+            <input type="number" min="1" class="" placeholder="" id="data-reported-cases" data-reported-cases required>
           </div>
         </div>
-        <div class="form-group">
+        <div class="">
           <label for="data-total-hospital-beds">Total hospital bed:</label>
-          <input type="" class="form-control" placeholder="" id="data-total-hospital-beds" data-total-hospital-beds required>
+          <input type="" class="" placeholder="" id="data-total-hospital-beds" data-total-hospital-beds required>
         </div>
-        <div class="form-row">
-          <div class="form-group col-6">
+        <div class="row">
+          <div class="col-6">
             <label for="timeToelapse">Time to elapse</label>
-            <input type="number" class="form-control" min="1" id="timeToelapse" data-time-to-elapse required>
+            <input type="number" class="" min="1" id="timeToelapse" data-time-to-elapse required>
           </div>
-          <div class="form-group col-6">
+          <div class="col-6">
             <label for="periodtype">Period type</label>
-            <select id="periodtype" class="form-control" data-period-type required>
+            <select id="periodtype" class="" data-period-type required>
               <option selected>Pariod type</option>
               <option>days</option>
               <option>weeks</option>
