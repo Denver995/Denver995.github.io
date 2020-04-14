@@ -1,86 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>covid-19-estimator</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="description" content="Covid-19 challeng" />
-    <meta name="author" content="Denver claude (SMART CODE)" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <style type="text/css">
-      .jumbotron {
-        color: #533; 
-        background-color: #9bb;
-      } 
-      body { color: white;}
-    </style>
+  <meta charset="utf-8">
+  <meta name="description" content="Covid-19 challeng" />
+  <meta name="author" content="Denver claude (SMART CODE)" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    [class*="col-"] {
+      float: left;
+      padding: 15px;
+    }
+
+    html {
+      font-family: "Lucida Sans", sans-serif;
+    }
+
+    .header {
+      background-color: #9933cc;
+      color: #ffffff;
+      padding: 15px;
+    }
+
+    .menu ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .menu li {
+      padding: 8px;
+      margin-bottom: 7px;
+      background-color: #33b5e5;
+      color: #ffffff;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    }
+
+    .menu li:hover {
+      background-color: #0099cc;
+    }
+
+    .aside {
+      background-color: #33b5e5;
+      padding: 15px;
+      color: #ffffff;
+      text-align: center;
+      font-size: 14px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    }
+
+    .footer {
+      background-color: #0099cc;
+      color: #ffffff;
+      text-align: center;
+      font-size: 12px;
+      padding: 15px;
+    }
+
+    /* For mobile phones: */
+    [class*="col-"] {
+      width: 100%;
+    }
+
+    @media only screen and (min-width: 600px) {
+      /* For tablets: */
+      .col-s-1 {width: 8.33%;}
+      .col-s-2 {width: 16.66%;}
+      .col-s-3 {width: 25%;}
+      .col-s-4 {width: 33.33%;}
+      .col-s-5 {width: 41.66%;}
+      .col-s-6 {width: 50%;}
+      .col-s-7 {width: 58.33%;}
+      .col-s-8 {width: 66.66%;}
+      .col-s-9 {width: 75%;}
+      .col-s-10 {width: 83.33%;}
+      .col-s-11 {width: 91.66%;}
+      .col-s-12 {width: 100%;}
+    }
+    @media only screen and (min-width: 768px) {
+      /* For desktop: */
+      .col-1 {width: 8.33%;}
+      .col-2 {width: 16.66%;}
+      .col-3 {width: 25%;}
+      .col-4 {width: 33.33%;}
+      .col-5 {width: 41.66%;}
+      .col-6 {width: 50%;}
+      .col-7 {width: 58.33%;}
+      .col-8 {width: 66.66%;}
+      .col-9 {width: 75%;}
+      .col-10 {width: 83.33%;}
+      .col-11 {width: 91.66%;}
+      .col-12 {width: 100%;}
+    }
+  </style>
 </head>
-<body class="bg-dark">
-    <div class="pos-f-t">
-      <div class="collapse" id="navbarToggleExternalContent">
-        <div class="bg-dark p-4">
-          <h5 class="text-white h4">Covid-19 estimator</h5>
-          <span class="text-muted">Covid-19 estimator brand.</span>
-        </div>
-      </div>
-      <nav class="navbar navbar-dark bg-dark">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      </nav>
+<body>
+
+  <div class="header">
+    <h1>Chania</h1>
+  </div>
+
+  <div class="row">
+    <div class="col-3 col-s-3 menu">
+      <ul>
+        <li>The Flight</li>
+        <li>The City</li>
+        <li>The Island</li>
+        <li>The Food</li>
+      </ul>
     </div>
-    <main>
-        <section>
-            <div class="jumbotron text-center">
-                <h1>Hello</h1>
-                <p>Welcome to the covid-19 estimator app</p>
-                <p><a href="#" class="btn btn-info btn-lg" role="button">Learn more</a></p>
-            </div>
-            <div class="row container">
-                <div class="col-md-3 col-sm-12"></div>
-                <form class="col-md-6 col-sm-12">
-                    <div class="form-row">
-                        <div class="form-group col-6">
-                            <label for="population">Population:</label>
-                            <input type="number" min="1" class="form-control" placeholder="" id="population" data-population required>
-                        </div>
-                        <div class="form-group col-6">
-                            <label for="data-reported-cases">Reported case:</label>
-                            <input type="number" min="1" class="form-control" placeholder="" id="data-reported-cases" data-reported-cases required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="data-total-hospital-beds">Total hospital bed:</label>
-                        <input type="" class="form-control" placeholder="" id="data-total-hospital-beds" data-total-hospital-beds required>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="timeToelapse">Time to elapse</label>
-                            <input type="number" class="form-control" min="1" id="timeToelapse" data-time-to-elapse required>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="periodtype">Period type</label>
-                            <select id="periodtype" class="form-control" data-period-type required>
-                                <option selected>Pariod type</option>
-                                <option>days</option>
-                                <option>weeks</option>
-                                <option>months</option>
-                            </select>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary float-right" role="button" data-go-estimate>Estimate</button>
-                </form>
-            </div>
-        </section>
-    </main>
-    <!-- Footer -->
-    <footer class="page-footer font-small bg-secondary mt-2">
-      <!-- Copyright -->
-      <div class="footer-copyright text-center py-3">© 2020 Copyright
-      </div>
-      <!-- Copyright -->
-    </footer>
-    <!-- Footer -->
-   </body>
+
+    <div class="col-6 col-s-9">
+      <h1>Fill the form bellow</h1>
+      <div class="col-3 col-s-12"></div>
+      <form class="col-6 col-s-12">
+        <div class="form-row">
+          <div class="form-group col-6">
+            <label for="population">Population:</label>
+            <input type="number" min="1" class="form-control" placeholder="" id="population" data-population required>
+          </div>
+          <div class="form-group col-6">
+            <label for="data-reported-cases">Reported case:</label>
+            <input type="number" min="1" class="form-control" placeholder="" id="data-reported-cases" data-reported-cases required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="data-total-hospital-beds">Total hospital bed:</label>
+          <input type="" class="form-control" placeholder="" id="data-total-hospital-beds" data-total-hospital-beds required>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-6">
+            <label for="timeToelapse">Time to elapse</label>
+            <input type="number" class="form-control" min="1" id="timeToelapse" data-time-to-elapse required>
+          </div>
+          <div class="form-group col-6">
+            <label for="periodtype">Period type</label>
+            <select id="periodtype" class="form-control" data-period-type required>
+              <option selected>Pariod type</option>
+              <option>days</option>
+              <option>weeks</option>
+              <option>months</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary float-right" role="button" data-go-estimate>Estimate</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="col-3 col-s-12">
+    <div class="aside">
+      <h2>What?</h2>
+      <p>Chania is a city on the island of Crete.</p>
+      <h2>Where?</h2>
+      <p>Crete is a Greek island in the Mediterranean Sea.</p>
+      <h2>How?</h2>
+      <p>You can reach Chania airport from all over Europe.</p>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <p>© 2020 Copyright.</p>
+</div>
+
+</body>
 </html>
