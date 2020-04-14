@@ -5,7 +5,7 @@
   <meta name="description" content="Covid-19 challeng" />
   <meta name="author" content="Denver claude (SMART CODE)" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
+  <style>
     * {
       box-sizing: border-box;
     }
@@ -23,6 +23,12 @@
 
     html {
       font-family: "Lucida Sans", sans-serif;
+    }
+
+    body {
+      background-color: black;
+      color: white;
+      opacity: 1;
     }
 
     .header {
@@ -103,59 +109,58 @@
     }
     
     /* Style inputs */
-  input[type=text], input[type=number], select {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
+    input[type=text], input[type=number], select {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
 
-/* Style the submit button */
-input[type=submit] {
-  width: 100%;
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
+    /* Style the submit button */
+    input[type=submit] {
+      width: 100%;
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
 
-/* Add a background color to the submit button on mouse-over */
-input[type=submit]:hover {
-  background-color: #45a049;
-  </style>
-</head>
-<body>
+    /* Add a background color to the submit button on mouse-over */
+    input[type=submit]:hover {
+      background-color: #45a049;
+    </style>
+  </head>
+  <body>
 
-  <div class="header">
-    <h1>Covid-19 challenge</h1>
-  </div>
+    <div class="header">
+      <h1>Covid-19 challenge</h1>
+    </div>
 
-  <div class="row">
-    <div class="col-2 col-sm-1"></div>
-    <div class="col-6 col-s-8">
-      <h1>Fill the form bellow to estimate</h1>
-      <form class="">
-        <div class="col-12">
-          <div class="col-6">
-            <label for="population">Population:</label>
-            <input type="number" min="1" class="" placeholder="" id="population" data-population required>
+    <div class="row">
+      <div class="col-2 col-sm-1"></div>
+      <div class="col-6 col-s-8">
+        <h1>Fill the form bellow to estimate</h1>
+        <form class="">
+          <div class="col-12">
+            <div class="col-6">
+              <label for="population">Population:</label>
+              <input type="number" min="1" class="" placeholder="" id="population" data-population required>
+            </div>
+            <div class="col-6">
+              <label for="data-reported-cases">Reported case:</label>
+              <input type="number" min="1" class="" placeholder="" id="data-reported-cases" data-reported-cases required>
+            </div>
           </div>
-          <div class="col-6">
-            <label for="data-reported-cases">Reported case:</label>
-            <input type="number" min="1" class="" placeholder="" id="data-reported-cases" data-reported-cases required>
+          <div class="col-12">
+            <label for="data-total-hospital-beds">Total hospital bed:</label>
+            <input type="number" class="" placeholder="" id="data-total-hospital-beds" data-total-hospital-beds required>
           </div>
-        </div>
-        <div class="col-12">
-          <label for="data-total-hospital-beds">Total hospital bed:</label>
-          <input type="number" class="" placeholder="" id="data-total-hospital-beds" data-total-hospital-beds required>
-        </div>
-        <div class="row">
           <div class="col-6">
             <label for="timeToelapse">Time to elapse</label>
             <input type="number" class="" min="1" id="timeToelapse" data-time-to-elapse required>
@@ -169,25 +174,25 @@ input[type=submit]:hover {
               <option>months</option>
             </select>
           </div>
+          <button type="submit" class="row" role="button" data-go-estimate>Estimate</button>
+        </form>
+      </div>
+      <div class="col-4 col-s-3">
+        <div class="aside">
+          <h2>What?</h2>
+          <p>Chania is a city on the island of Crete.</p>
+          <h2>Where?</h2>
+          <p>Crete is a Greek island in the Mediterranean Sea.</p>
+          <h2>How?</h2>
+          <p>You can reach Chania airport from all over Europe.</p>
         </div>
-        <button type="submit" class="row" role="button" data-go-estimate>Estimate</button>
-      </form>
-    </div>
-    <div class="col-4 col-s-3">
-    <div class="aside">
-      <h2>What?</h2>
-      <p>Chania is a city on the island of Crete.</p>
-      <h2>Where?</h2>
-      <p>Crete is a Greek island in the Mediterranean Sea.</p>
-      <h2>How?</h2>
-      <p>You can reach Chania airport from all over Europe.</p>
+      </div>
     </div>
   </div>
-  </div>
-</div>
 
-<div class="footer">
-  <p>© 2020 Copyright.</p>
-</div>
+  <div class="footer">
+    <p>© 2020 Copyright.</p>
+  </div>
+
 </body>
 </html>
